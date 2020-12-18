@@ -1,0 +1,16 @@
+<nb-layout windowMode>
+    <nb-layout-column>
+      <label style="z-index: 1000; margin-left: 9.6%" >
+              <img src="https://cdn1.iconfinder.com/data/icons/european-country-flags/83/france-256.png" alt="" style="width: 40px;
+              margin-right: 7px;">
+              <!-- <ui-switch [(ngModel)]="enable" (change)="changetoogle()"></ui-switch> -->
+              <nb-toggle status="success" [(ngModel)]="enable" (change)="changetoogle()"></nb-toggle>
+              <img src="https://cdn2.iconfinder.com/data/icons/america-asia-oceania-africa-3/100/Tunisia-256.png" alt="" style="width: 40px;
+              margin-left: 7px;">
+              
+            </label>
+      <router-outlet></router-outlet>
+      
+    </nb-layout-column>
+  </nb-layout>
+  

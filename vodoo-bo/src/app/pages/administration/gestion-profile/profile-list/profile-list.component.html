@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Gestion Profile</h2>
+    </div>
+    <a routerLink="add"><button  class="btn btn-success pull-right"  style="float: right;" > Nouveau Profile  </button></a>
+    
+    <div class="ui-table-globalfilter-container text-right">
+      <input type="text" class="mr-05em" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:250px;">
+      
+  </div>
+
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Designation</th>
+            <th>Date Creation</th>
+            <th>Actif</th>
+            <th>Action</th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let profil of profiles | async">
+            <td>{{profil.codeProfil}}</td>
+            <td>{{profil.nomProfile}}</td>
+            <td>{{profil.dateCreaProfi}}</td>
+            <td>{{profil.isactif}}</td>
+            <td>
+              <button (click)="deleteProfile(profil.idProfile)" class="btn btn-danger">Delete</button>
+              <button (click)="updateProfile(profil.idProfile)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,28 @@
+<div class="container login-container"  *ngIf="isExist">
+  <div class="row">
+    <div class="col-md-6 login-form-1 Auth">
+      <div style="margin-top: 1%;">
+      <img src="../../../assets/images/logo-odoo.png" class="img-fluid" alt="Responsive image">
+      </div>
+    </div>
+    <div class="col-md-6 login-form-2">
+      <h3></h3>
+      <form [formGroup]="loginform" (ngSubmit)="doLogin()">
+        <div class="form-group">
+          <input type="text" id="identifiant" class="form-control" formControlName="email"  [ngClass]="{'has-error': (isSubmitted && (formControls.email.errors )) || loginError }" placeholder="{{'login' | translate}}" required autofocus />
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="{{'Motpasse' | translate}}" formControlName="password"  [ngClass]="{'has-error': (isSubmitted && (formControls.password.errors )) || loginError }" required />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btnSubmit">{{'Connect' | translate}} <i *ngIf="showloading" class="fa fa-spinner fa-spin" style="margin-left: 5px; color:#0055a0;"></i></button>
+        </div>
+
+        <div class="form-group">
+
+          <a (click)="Motpasseoublie()" class="ForgetPwd" value="Login" >{{'Mot de passe oublié ?' | translate}}</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
